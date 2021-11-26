@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.mosip</groupId>
+  <artifactId>nfiq1.0</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  	<properties>
+     	<maven.compiler.source>1.8</maven.compiler.source>
+     	<maven.compiler.target>1.8</maven.compiler.target>
+ 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+  <!-- https://mvnrepository.com/artifact/com.github.jai-imageio/jai-imageio-jpeg2000 -->
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/com.github.jai-imageio/jai-imageio-jpeg2000 -->
+	<dependency>
+	    <groupId>com.github.jai-imageio</groupId>
+	    <artifactId>jai-imageio-jpeg2000</artifactId>
+	    <version>1.3.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.10</version>
+	</dependency>
+	<dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.6</version>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.7.5</version>
+    </dependency>
+	<!-- https://mvnrepository.com/artifact/com.github.mhshams/jnbis -->
+	<dependency>
+	    <groupId>com.github.mhshams</groupId>
+	    <artifactId>jnbis</artifactId>
+	    <version>2.0.2</version>
+	</dependency>
+	<dependency>
+	    <groupId>io.mosip.biometric.util</groupId>
+	    <artifactId>biometrics-util</artifactId>
+	    <version>1.1.5</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.10</version>
+	</dependency>
+	<dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>RELEASE</version>
+          <scope>compile</scope>
+      </dependency>			
+  </dependencies>
+  
+	<build>
+		<plugins>
+			<!-- <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
+				<version>2.2.6.RELEASE</version> <executions> <execution> <goals> <goal>repackage</goal> 
+				</goals> </execution> </executions> <configuration> <release>11</release> 
+				<fork>true</fork> <meminitial>1024m</meminitial> <maxmem>2024m</maxmem> <archive> 
+				<manifest> <mainClass>org.biometric.provider.ProviderApplication</mainClass> 
+				</manifest> </archive> </configuration> </plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>io.mosip.mock.sbi.test.TestMockSBI</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.2</version>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								${project.build.directory}/lib
+							</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>copy-resources-1</id>
+						<!-- here the phase you need -->
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}</directory>
+									//<filtering>false</filtering>
+									<includes><!-- what -->
+							          <include>info_jp2.iso</include>
+							          <include>info_wsq.iso</include>
+							          <include>runJP2.bat</include>
+							          <include>runWSQ.bat</include>
+							       </includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
