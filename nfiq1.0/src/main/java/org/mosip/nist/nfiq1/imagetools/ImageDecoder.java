@@ -94,10 +94,10 @@ public class ImageDecoder extends ImageTools {
 			FingerBDIR fingerBDIR  = FingerDecoder.getFingerBDIR(requestDto);
 			ImageData imageData = fingerBDIR.getRepresentation().getRepresentationBody().getImageData();
 			int ppi = fingerBDIR.getRepresentation().getRepresentationHeader().getImageSpatialSamplingRateHorizontal();
-			FingerImageBitDepth piDepth = fingerBDIR.getRepresentation().getRepresentationHeader().getBitDepth();
-			FingerImageCompressionType fingerImageCompressionType = fingerBDIR.getRepresentation().getRepresentationHeader().getCompressionType();
+			int piDepth = fingerBDIR.getBitDepth();
+			int fingerImageCompressionType = fingerBDIR.getCompressionType();
 			
-			oLength.set(imageData.getImageLength());
+			oLength.set((int) imageData.getImageLength());
 			requestDto.setImageType((fingerImageCompressionType == FingerImageCompressionType.JPEG_2000_LOSS_LESS ? 0 : (fingerImageCompressionType == FingerImageCompressionType.WSQ ? 1 : -1)));
 
 			imageType.set(ImageType.UNKNOWN_IMG);
@@ -114,11 +114,11 @@ public class ImageDecoder extends ImageTools {
 			LOGGER.info("Image Details ");
 			LOGGER.info(String.format("[\nCompression Type=%s\n, Width=%2d\n, Height=%2d\n, Bit Depth=%2d\n, PPI=%2d\n, Length=%2d\n]",
 					(requestDto.getImageType() == 0 ? "JP2000" : "WSQ"), image.getWidth(), image.getHeight(), 
-					piDepth.value(), ppi, data.length));
+					piDepth, ppi, data.length));
 
 			oWidth.set(image.getWidth());
 			oHeight.set(image.getHeight());
-			oDepth.set(piDepth.value());// image.getColorModel().getPixelSize());
+			oDepth.set(piDepth);// image.getColorModel().getPixelSize());
 			oPPI.set(ppi);
 			returnCode.set(ILfs.FALSE);
 			return image; 
