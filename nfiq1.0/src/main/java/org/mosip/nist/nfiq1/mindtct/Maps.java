@@ -520,7 +520,6 @@ public class Maps extends MindTct implements IMaps {
 			for (int x = 0; x < mappedImageWidth; x++) {
 				/* If image block is NOT LOW CONTRAST and has INVALID direction ... */
 				if ((oLowContrastMap.get(cptrIndex) == 0) && (oDirectionMap.get(dptrIndex) == ILfs.INVALID_DIR)) {
-					logger.info("MAP INSIDE");
 					/* Set neighbor accumulators to 0. */
 					totalFound = 0;
 					totalDist = 0;
