@@ -9,6 +9,21 @@
 	<description>NFIQ</description>
 	<url>https://https://github.com/mosip/nfiq</url>
 
+	<scm>
+		<connection>scm:git:git://github.com/mosip/mosip-ref-impl.git</connection>
+		<developerConnection>scm:git:ssh://github.com:mosip/mosip-ref-impl.git</developerConnection>
+		<url>https://github.com/mosip/mosip-ref-impl</url>
+		<tag>HEAD</tag>
+	</scm>
+	<developers>
+		<developer>
+			<name>Mosip</name>
+			<email>mosip.emailnotifier@gmail.com</email>
+			<organization>io.mosip</organization>
+			<organizationUrl>https://github.com/mosip/mosip-ref-impl</organizationUrl>
+		</developer>
+	</developers>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>21</java.version>
