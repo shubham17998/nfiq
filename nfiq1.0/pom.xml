@@ -5,7 +5,7 @@
 	<groupId>io.mosip</groupId>
 	<artifactId>nfiq1.0</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kernel-bio-converter</name>
+	<name>nfiq1.0</name>
 	<description>NFIQ</description>
 	<url>https://https://github.com/mosip/nfiq</url>
 
@@ -48,7 +48,7 @@
 		<maven.deploy.plugin.version>3.1.1</maven.deploy.plugin.version>
 		<maven.source.plugin.version>3.3.1</maven.source.plugin.version>
 		<maven.javadoc.plugin.version>3.2.0</maven.javadoc.plugin.version>
-		<maven.gpg.plugin.version>3.2.3</maven.gpg.plugin.version>
+		<maven.gpg.plugin.version>1.5</maven.gpg.plugin.version>
 		<maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
 		<maven.war.plugin.version>3.1.0</maven.war.plugin.version>
 		<maven.surefire.plugin.version>2.22.0</maven.surefire.plugin.version>
