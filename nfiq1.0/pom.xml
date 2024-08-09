@@ -9,12 +9,20 @@
 	<description>NFIQ</description>
 	<url>https://https://github.com/mosip/nfiq</url>
 
+	<licenses>
+		<license>
+			<name>MPL 2.0</name>
+			<url>https://www.mozilla.org/en-US/MPL/2.0/</url>
+		</license>
+	</licenses>
+
 	<scm>
 		<connection>scm:git:git://github.com/mosip/nfiq.git</connection>
 		<developerConnection>scm:git:ssh://github.com:mosip/nfiq.git</developerConnection>
 		<url>https://github.com/mosip/nfiq</url>
 		<tag>HEAD</tag>
 	</scm>
+
 	<developers>
 		<developer>
 			<name>Mosip</name>
