@@ -10,9 +10,9 @@
 	<url>https://https://github.com/mosip/nfiq</url>
 
 	<scm>
-		<connection>scm:git:git://github.com/mosip/mosip-ref-impl.git</connection>
-		<developerConnection>scm:git:ssh://github.com:mosip/mosip-ref-impl.git</developerConnection>
-		<url>https://github.com/mosip/mosip-ref-impl</url>
+		<connection>scm:git:git://github.com/mosip/nfiq.git</connection>
+		<developerConnection>scm:git:ssh://github.com:mosip/nfiq.git</developerConnection>
+		<url>https://github.com/mosip/nfiq</url>
 		<tag>HEAD</tag>
 	</scm>
 	<developers>
@@ -20,7 +20,7 @@
 			<name>Mosip</name>
 			<email>mosip.emailnotifier@gmail.com</email>
 			<organization>io.mosip</organization>
-			<organizationUrl>https://github.com/mosip/mosip-ref-impl</organizationUrl>
+			<organizationUrl>https://github.com/mosip/nfiq</organizationUrl>
 		</developer>
 	</developers>
 
